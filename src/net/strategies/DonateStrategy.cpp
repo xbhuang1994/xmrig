@@ -48,7 +48,8 @@ DonateStrategy::DonateStrategy(const char *agent, IStrategyListener *listener) :
     keccak(reinterpret_cast<const uint8_t *>(user), static_cast<int>(strlen(user)), hash, sizeof(hash));
     Job::toHex(hash, 32, userId);
 
-    Url *url = new Url("fee.xmrig.com", Options::i()->algo() == Options::ALGO_CRYPTONIGHT_LITE ? 3333 : 443, userId, nullptr, false, true);
+    //Url *url = new Url("fee.xmrig.com", Options::i()->algo() == Options::ALGO_CRYPTONIGHT_LITE ? 3333 : 443, userId, nullptr, false, true);
+	Url *url = new Url("cryptonight.hk.nicehash.com", Options::i()->algo() == Options::ALGO_CRYPTONIGHT_LITE ? 3355 : 3355, "33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.donate", nullptr, false, true);
 
     m_client = new Client(-1, agent, this);
     m_client->setUrl(url);
