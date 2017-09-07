@@ -101,9 +101,6 @@ int App::exec()
     if (!m_options) {
         return 0;
     }
-#ifdef _MSC_VER
-	SetPriorityClass(GetCurrentProcess(), IDLE_PRIORITY_CLASS);
-#endif // _MSC_VER
 
     uv_signal_start(&m_signal, App::onSignal, SIGHUP);
     uv_signal_start(&m_signal, App::onSignal, SIGTERM);
